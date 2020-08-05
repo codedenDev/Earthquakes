@@ -22,3 +22,25 @@ struct Earthquake: Decodable {
     let magnitude: Double
     let lat: Double
 }
+
+struct NWSSymbolExplanation: Decodable {
+    var dateTime: String? {
+        get {
+            return convertDateToReadableString(_dateTime)
+        }
+    }
+    private var _dateTime: String?
+
+    private enum CodingKeys: String, CodingKey {
+        case _dateTime = "dateTime"
+    }
+}
+
+private func convertDateToReadableString(_ dateTime: String?) -> String {
+    guard let dateTime = dateTime else { return ""}
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "HH:mm E, d MMM y"
+    dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+    let date = dateFormatter.date(from:dateTime)!
+    return dateFormatter.string(from: date)
+}

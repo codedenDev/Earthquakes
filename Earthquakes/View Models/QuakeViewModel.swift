@@ -42,10 +42,26 @@ extension QuakeViewModel {
 extension QuakeViewModel {
     
     var dateTimeLabel: String {
+        
         return self.earthquake.datetime
     }
     
-    var detailLabel: String {
+    var regionLabel: String {
         return self.earthquake.src
+    }
+    var magLabel: Double {
+        return self.earthquake.magnitude
+    }
+    
+    var depthLabel: Double {
+        return self.earthquake.depth
+    }
+    
+    var latLabel: Double {
+        return self.earthquake.lat
+    }
+    
+    var lngLabel: Double {
+        return self.earthquake.lng
     }
 }

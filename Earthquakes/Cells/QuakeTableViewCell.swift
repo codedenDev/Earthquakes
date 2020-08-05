@@ -7,20 +7,27 @@
 //
 
 import UIKit
+import MapKit
 
 class QuakeTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var regionLabel: UILabel!
     @IBOutlet weak var dateTimeLabel: UILabel!
-    @IBOutlet weak var detailLabel: UILabel!
+    @IBOutlet weak var depthLabel: UILabel!
+    @IBOutlet weak var magLabel: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+    
+        
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
-
+    
 }
