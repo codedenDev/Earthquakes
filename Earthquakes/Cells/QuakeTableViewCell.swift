@@ -16,6 +16,8 @@ class QuakeTableViewCell: UITableViewCell {
     @IBOutlet weak var dateTimeLabel: UILabel!
     @IBOutlet weak var depthLabel: UILabel!
     @IBOutlet weak var magLabel: UILabel!
+    @IBOutlet weak var latLabel: UILabel!
+    @IBOutlet weak var lngLabel: UILabel!
     
     
     override func awakeFromNib() {

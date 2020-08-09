@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		502DCCF224DD7380004CE387 /* DetailEarthquakeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502DCCF124DD7380004CE387 /* DetailEarthquakeTableViewController.swift */; };
 		5055175024D69FDF004DFF5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5055174F24D69FDF004DFF5E /* AppDelegate.swift */; };
 		5055175224D69FDF004DFF5E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5055175124D69FDF004DFF5E /* SceneDelegate.swift */; };
-		5055175424D69FDF004DFF5E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5055175324D69FDF004DFF5E /* ViewController.swift */; };
 		5055175724D69FDF004DFF5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5055175524D69FDF004DFF5E /* Main.storyboard */; };
 		5055175924D69FE1004DFF5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5055175824D69FE1004DFF5E /* Assets.xcassets */; };
 		5055175C24D69FE1004DFF5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5055175A24D69FE1004DFF5E /* LaunchScreen.storyboard */; };
@@ -20,14 +20,13 @@
 		5055177124D6C0FC004DFF5E /* QuakeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5055177024D6C0FC004DFF5E /* QuakeTableViewCell.swift */; };
 		5079DB7124DAD54B003D502D /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5079DB7024DAD54B003D502D /* Appearance.swift */; };
 		5079DB7424DADE5B003D502D /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5079DB7324DADE5B003D502D /* UIColor.swift */; };
-		5079DB7624DAE726003D502D /* DetailEarthquakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5079DB7524DAE726003D502D /* DetailEarthquakeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		502DCCF124DD7380004CE387 /* DetailEarthquakeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEarthquakeTableViewController.swift; sourceTree = "<group>"; };
 		5055174C24D69FDF004DFF5E /* Earthquakes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Earthquakes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5055174F24D69FDF004DFF5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5055175124D69FDF004DFF5E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5055175324D69FDF004DFF5E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5055175624D69FDF004DFF5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5055175824D69FE1004DFF5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5055175B24D69FE1004DFF5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -39,7 +38,6 @@
 		5055177024D6C0FC004DFF5E /* QuakeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuakeTableViewCell.swift; sourceTree = "<group>"; };
 		5079DB7024DAD54B003D502D /* Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
 		5079DB7324DADE5B003D502D /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
-		5079DB7524DAE726003D502D /* DetailEarthquakeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEarthquakeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +78,6 @@
 				5055176324D69FFB004DFF5E /* Cells */,
 				5055174F24D69FDF004DFF5E /* AppDelegate.swift */,
 				5055175124D69FDF004DFF5E /* SceneDelegate.swift */,
-				5055175324D69FDF004DFF5E /* ViewController.swift */,
 				5055175524D69FDF004DFF5E /* Main.storyboard */,
 				5055175824D69FE1004DFF5E /* Assets.xcassets */,
 				5055175A24D69FE1004DFF5E /* LaunchScreen.storyboard */,
@@ -126,7 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				5055176E24D6A688004DFF5E /* EarthquakeTableViewController.swift */,
-				5079DB7524DAE726003D502D /* DetailEarthquakeViewController.swift */,
+				502DCCF124DD7380004CE387 /* DetailEarthquakeTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -210,14 +207,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5055175424D69FDF004DFF5E /* ViewController.swift in Sources */,
 				5055175024D69FDF004DFF5E /* AppDelegate.swift in Sources */,
 				5055176D24D6A31E004DFF5E /* QuakeViewModel.swift in Sources */,
 				5055176F24D6A688004DFF5E /* EarthquakeTableViewController.swift in Sources */,
-				5079DB7624DAE726003D502D /* DetailEarthquakeViewController.swift in Sources */,
 				5055175224D69FDF004DFF5E /* SceneDelegate.swift in Sources */,
 				5079DB7124DAD54B003D502D /* Appearance.swift in Sources */,
 				5055177124D6C0FC004DFF5E /* QuakeTableViewCell.swift in Sources */,
+				502DCCF224DD7380004CE387 /* DetailEarthquakeTableViewController.swift in Sources */,
 				5079DB7424DADE5B003D502D /* UIColor.swift in Sources */,
 				5055176B24D6A26C004DFF5E /* Webservice.swift in Sources */,
 				5055176924D6A211004DFF5E /* QuakeModel.swift in Sources */,
