@@ -20,9 +20,8 @@ class EarthquakeTableViewController: UITableViewController {
         
         setup()
     }
-    
+
     private func setup() {
-        
         self.title = "Earthquakes"
         self.tableView.backgroundColor = UIColor.Font.sandBrown
         self.navigationController?.navigationBar.prefersLargeTitles = true
@@ -58,7 +57,6 @@ class EarthquakeTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "QuakeTableViewCell", for: indexPath) as? QuakeTableViewCell else {
             fatalError("QuakeTableViewCell not found")
         }
-        
         let earthquakesVM = self.earthquakeListVM.earthquakesAtIndex(indexPath.row)
         let dateString = earthquakesVM.dateTimeLabel
         let dateFormatter = DateFormatter()
@@ -78,27 +76,27 @@ class EarthquakeTableViewController: UITableViewController {
         cell.lngLabel?.text = String(describing: earthquakesVM.lngLabel)
         return cell
     }
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if let cell = sender as? UITableViewCell,
             let indexPath = tableView.indexPath(for: cell) {
-           let quakes = self.earthquakeListVM.earthquakesAtIndex(indexPath.row)
+            let quakes = self.earthquakeListVM.earthquakesAtIndex(indexPath.row)
             print(quakes)
             let vc: DetailEarthquakeTableViewController = segue.destination as! DetailEarthquakeTableViewController
             vc.dataRegionTag = quakes.regionLabel
             vc.dataDateTime = quakes.dateTimeLabel
-            vc.dataLngTag = String(describing: quakes.lngLabel)
-            vc.dataLatTag = String(describing: quakes.latLabel)
-            vc.dataDepthTag = String(describing: quakes.depthLabel)
-            vc.dataMagTag = String(describing: quakes.magLabel)
-    
+            vc.dataLngTag = quakes.lngLabel
+            // vc.dataLatTag = String(describing: quakes.latLabel)
+            vc.dataLatTag = quakes.latLabel
+            vc.dataDepthTag = quakes.depthLabel
+            vc.dataMagTag = quakes.magLabel
             print(type(of: segue.destination))
             print(#function, "I prepare for segue with", vc.dataMagTag as Any)
         }
         
     }
-
+    
 }
 
 
