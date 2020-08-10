@@ -24,7 +24,7 @@ class Webservice {
                     completion(earthquakeList.earthquakes)
                 }
                 
-                print(earthquakeList?.earthquakes as Any)
+               // print(earthquakeList?.earthquakes as Any)
                 
             }
             
