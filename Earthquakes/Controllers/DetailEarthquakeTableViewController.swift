@@ -47,7 +47,6 @@ class DetailEarthquakeTableViewController: UITableViewController,CLLocationManag
         }else {
             self.magText?.text = String(describing: dataMagTag!)
         }
-        
         self.datetime.text = convertedDate
         self.regionText?.text = dataRegionTag
         self.depthText?.text = String(describing: dataDepthTag!)
@@ -56,7 +55,7 @@ class DetailEarthquakeTableViewController: UITableViewController,CLLocationManag
         self.mapView.delegate = self
         DetailEarthquakeTableViewController.lat = dataLatTag!
         DetailEarthquakeTableViewController.lng = dataLngTag!
-        
+
         self.mapView.delegate = self
         
         locationManager.delegate = self
@@ -67,7 +66,6 @@ class DetailEarthquakeTableViewController: UITableViewController,CLLocationManag
         self.mapView.showsUserLocation = true
         
         addPointOfInterest()
-
     }
 
     private func addPointOfInterest() {
