@@ -10,11 +10,8 @@ import UIKit
 import MapKit
 import CoreLocation
 
-
-
-
 class DetailEarthquakeTableViewController: UITableViewController,CLLocationManagerDelegate,MKMapViewDelegate {
-    let locationManager = CLLocationManager()
+    private let locationManager = CLLocationManager()
     
     @IBOutlet weak var datetime: UITextField!
     @IBOutlet weak var regionText: UITextField!
@@ -60,62 +57,52 @@ class DetailEarthquakeTableViewController: UITableViewController,CLLocationManag
         DetailEarthquakeTableViewController.lat = dataLatTag!
         DetailEarthquakeTableViewController.lng = dataLngTag!
         
+        self.mapView.delegate = self
         
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.distanceFilter = kCLDistanceFilterNone
+        locationManager.startUpdatingLocation()
+        self.mapView.showsUserLocation = true
         
-        self.locationManager.requestAlwaysAuthorization()
-        self.locationManager.requestWhenInUseAuthorization()
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            locationManager.startUpdatingLocation()
+        addPointOfInterest()
+
+    }
+
+    private func addPointOfInterest() {
+        
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = CLLocationCoordinate2D(latitude: dataLatTag!, longitude: dataLngTag!)
+        self.mapView.addAnnotation(annotation)
+        let region = CLCircularRegion(center: annotation.coordinate, radius: 200, identifier: "Seismic Activity")
+        region.notifyOnEntry = true
+        region.notifyOnExit = true
+        self.mapView.addOverlay(MKCircle(center: annotation.coordinate, radius: 200))
+        self.locationManager.startMonitoring(for: region)
+    }
+    func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
+        print("didEnterRegion")
+    }
+    func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
+        print("didExitRegion")
+    }
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        
+        if overlay is MKCircle {
+            let circleRenderer = MKCircleRenderer(circle: overlay as! MKCircle)
+            circleRenderer.lineWidth = 1.0
+            circleRenderer.strokeColor = UIColor.purple
+            circleRenderer.fillColor = UIColor.purple
+            circleRenderer.alpha = 0.4
+            return circleRenderer
         }
-        
-        mapView.delegate = self
-        mapView.mapType = .standard
-        mapView.isZoomEnabled = true
-        mapView.isScrollEnabled = true
-        
-        let quakeCenter = CLLocation(latitude: dataLatTag!, longitude: dataLngTag!)
-        let region = MKCoordinateRegion(
-            center: quakeCenter.coordinate,
-            latitudinalMeters: 1000,
-            longitudinalMeters: 1000)
-        mapView.setCameraBoundary(
-            MKMapView.CameraBoundary(coordinateRegion: region),
-            animated: true)
-        
-        if let coor = mapView.userLocation.location?.coordinate{
-            mapView.setCenter(coor, animated: true)
-            
-        }
-        
-        
+        return MKOverlayRenderer()
     }
     
+    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
+        let region = MKCoordinateRegion(center: mapView.userLocation.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.020, longitudeDelta: 0.008))
+        mapView.setRegion(region, animated: true)
+    }
     
 }
-private extension MKMapView {
-    func centerToLocation(_ location: CLLocation, regionRadius: CLLocationDistance = 1000) {
-        let coordinateRegion = MKCoordinateRegion(
-            center: location.coordinate,
-            latitudinalMeters: regionRadius,
-            longitudinalMeters: regionRadius)
-        setRegion(coordinateRegion, animated: true)
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

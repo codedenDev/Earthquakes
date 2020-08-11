@@ -14,7 +14,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0NI-lz-d87">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="QuakeTableViewCell" rowHeight="88" translatesAutoresizingMaskIntoConstraints="NO" id="dxb-qM-vG4" customClass="QuakeTableViewCell" customModule="Earthquakes" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="88"/>
@@ -88,7 +88,6 @@
                                         <constraint firstItem="UJZ-9m-Tf1" firstAttribute="leading" secondItem="Mwy-ka-7Ft" secondAttribute="leadingMargin" id="s0W-hI-gq2"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" name="lightestBrown"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
                                     <outlet property="dateTimeLabel" destination="0xD-gF-DUf" id="h24-dd-AGS"/>
@@ -349,9 +348,6 @@
     <resources>
         <namedColor name="darkGreen">
             <color red="0.34900000691413879" green="0.4309999942779541" blue="0.47499999403953552" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="lightestBrown">
-            <color red="0.94117647058823528" green="0.92549019607843142" blue="0.88627450980392153" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

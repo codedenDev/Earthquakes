@@ -23,7 +23,7 @@ class EarthquakeTableViewController: UITableViewController {
 
     private func setup() {
         self.title = "Earthquakes"
-        self.tableView.backgroundColor = UIColor.Font.sandBrown
+       // self.tableView.backgroundColor = UIColor.Font.sandBrown
         self.navigationController?.navigationBar.prefersLargeTitles = true
         
         // MARK: - Webservice Call

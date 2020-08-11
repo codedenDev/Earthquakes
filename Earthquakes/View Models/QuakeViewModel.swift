@@ -18,11 +18,9 @@ extension QuakeListViewModel {
     var numberOfSections: Int {
         return 1
     }
-    
     func numberOfRowsInSection(_ section: Int) -> Int {
         return self.earthquakes.count
     }
-    
     func earthquakesAtIndex(_ index: Int) -> QuakeViewModel {
         let earthquakes = self.earthquakes[index]
         return QuakeViewModel(earthquakes)
@@ -40,27 +38,21 @@ extension QuakeViewModel {
 }
 
 extension QuakeViewModel {
-    
     var dateTimeLabel: String {
-        
         return self.earthquake.datetime
     }
-    
     var regionLabel: String {
         return self.earthquake.src
     }
     var magLabel: Double {
         return self.earthquake.magnitude
     }
-    
     var depthLabel: Double {
         return self.earthquake.depth
     }
-    
     var latLabel: Double {
         return self.earthquake.lat
     }
-    
     var lngLabel: Double {
         return self.earthquake.lng
     }

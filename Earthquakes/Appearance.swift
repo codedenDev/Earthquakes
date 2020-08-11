@@ -23,7 +23,7 @@ class Appearance: NSObject {
         static func setupNavigationBar() {
             let appearance = UINavigationBarAppearance()
             appearance.configureWithTransparentBackground()
-            appearance.backgroundColor = UIColor.Font.darkBrown
+           // appearance.backgroundColor = UIColor.Font.darkBrown
             UINavigationBar.appearance().barTintColor = UIColor.Font.darkGreen
             UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.Font.darkGreen]
             UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.Font.darkGreen]

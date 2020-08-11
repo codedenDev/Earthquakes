@@ -35,7 +35,6 @@ struct NWSSymbolExplanation: Decodable {
         case _dateTime = "dateTime"
     }
 }
-
 private func convertDateToReadableString(_ dateTime: String?) -> String {
     guard let dateTime = dateTime else { return ""}
     let dateFormatter = DateFormatter()
