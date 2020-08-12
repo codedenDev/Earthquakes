@@ -69,5 +69,7 @@
 	<string>Determines quake location</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Use to determine quake location</string>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleLightContent</string>
 </dict>
 </plist>

@@ -43,18 +43,18 @@ class DetailEarthquakeTableViewController: UITableViewController,CLLocationManag
         
         if Double(dataMagTag!) > 7.9 {
             magText.textColor = UIColor.Font.alertColor
-            self.magText?.text = String(describing: dataMagTag!)
+            self.magText?.text = String(describing: dataMagTag ?? 0.0)
         }else {
-            self.magText?.text = String(describing: dataMagTag!)
+            self.magText?.text = String(describing: dataMagTag ?? 0.0)
         }
         self.datetime.text = convertedDate
         self.regionText?.text = dataRegionTag
-        self.depthText?.text = String(describing: dataDepthTag!)
-        self.latText?.text = String(describing: dataLatTag!)
-        self.lngText?.text = String(describing: dataLngTag!)
+        self.depthText?.text = String(describing: dataDepthTag ?? 0.0)
+        self.latText?.text = String(describing: dataLatTag ?? 0.0)
+        self.lngText?.text = String(describing: dataLngTag ?? 0.0)
+        
         self.mapView.delegate = self
-        DetailEarthquakeTableViewController.lat = dataLatTag!
-        DetailEarthquakeTableViewController.lng = dataLngTag!
+       
 
         self.mapView.delegate = self
         

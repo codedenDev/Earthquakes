@@ -24,6 +24,9 @@ class Appearance: NSObject {
             UINavigationBar.appearance().barTintColor = UIColor.Font.darkGreen
             UINavigationBar.appearance().titleTextAttributes =  [NSAttributedString.Key.foregroundColor:UIColor.white]
             UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+            UINavigationBar.appearance().isTranslucent = false
+            
+            UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.orange]
             
     //        appearance.shadowColor = nil
             UINavigationBar.appearance().tintColor = UIColor.Font.darkGreen
