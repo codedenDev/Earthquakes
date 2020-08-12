@@ -19,13 +19,9 @@ class QuakeTableViewCell: UITableViewCell {
     @IBOutlet weak var latLabel: UILabel!
     @IBOutlet weak var lngLabel: UILabel!
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
-    
-        
     }
-    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         

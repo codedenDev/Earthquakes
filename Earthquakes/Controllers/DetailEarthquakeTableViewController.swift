@@ -65,7 +65,7 @@ class DetailEarthquakeTableViewController: UITableViewController,CLLocationManag
         locationManager.startUpdatingLocation()
         self.mapView.showsUserLocation = true
         
-        addPointOfInterest()
+       addPointOfInterest()
     }
 
     private func addPointOfInterest() {
@@ -86,7 +86,6 @@ class DetailEarthquakeTableViewController: UITableViewController,CLLocationManag
         print("didExitRegion")
     }
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-        
         if overlay is MKCircle {
             let circleRenderer = MKCircleRenderer(circle: overlay as! MKCircle)
             circleRenderer.lineWidth = 1.0
@@ -97,10 +96,8 @@ class DetailEarthquakeTableViewController: UITableViewController,CLLocationManag
         }
         return MKOverlayRenderer()
     }
-    
     func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
-        let region = MKCoordinateRegion(center: mapView.userLocation.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.020, longitudeDelta: 0.008))
+        let region = MKCoordinateRegion(center: mapView.userLocation.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.001, longitudeDelta: 0.001))
         mapView.setRegion(region, animated: true)
     }
-    
 }

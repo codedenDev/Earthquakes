@@ -9,10 +9,8 @@
 import Foundation
 
 struct QuakesList: Decodable {
-
     let earthquakes: [Earthquake]
 }
-
 struct Earthquake: Decodable {
     let datetime: String
     let depth: Double

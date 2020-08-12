@@ -25,7 +25,6 @@ extension QuakeListViewModel {
         let earthquakes = self.earthquakes[index]
         return QuakeViewModel(earthquakes)
     }
-    
 }
 
 struct QuakeViewModel {

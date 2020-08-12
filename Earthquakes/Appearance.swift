@@ -14,22 +14,18 @@ class Appearance: NSObject {
             guard let _ = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate else {
                 return
             }
-
             self.setupNavigationBar()
-    //        self.setupTabBar()
-    //        self.setupTableView()
         }
         
         static func setupNavigationBar() {
             let appearance = UINavigationBarAppearance()
             appearance.configureWithTransparentBackground()
-            appearance.backgroundColor = UIColor.Font.dustBrown
+            appearance.backgroundColor = UIColor.Font.navRed
             UINavigationBar.appearance().barTintColor = UIColor.Font.darkGreen
-            UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.Font.darkGreen]
-            UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.Font.darkGreen]
+            UINavigationBar.appearance().titleTextAttributes =  [NSAttributedString.Key.foregroundColor:UIColor.white]
+            UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
             
     //        appearance.shadowColor = nil
-            
             UINavigationBar.appearance().tintColor = UIColor.Font.darkGreen
             UINavigationBar.appearance().standardAppearance = appearance
             UINavigationBar.appearance().scrollEdgeAppearance = appearance

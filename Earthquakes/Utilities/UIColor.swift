@@ -47,6 +47,7 @@ extension UIColor {
         static let dustBrown = { return UIColor(hexString:"#F0ECE2") }()
         static let warning = { return UIColor(hexString:"#ffd634") }()
         static let alertColor = { return UIColor(hexString:"#fc2a2d") }()
+        static let navRed = { return UIColor(hexString:"#B20700") }()
    
         
         
